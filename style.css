@@ -1,0 +1,109 @@
+body {
+  background-color: khaki;
+}
+header {
+  padding: 15px;
+  background-color: #d2b48c;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#logo-img {
+  /* float: left;
+  position: relative; top: 15px;
+  margin-left: 15px; */
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.header-text {
+  /* margin-top: 40px;
+  letter-spacing: 2px; */
+  font-family: "Acme", sans-serif;
+  font-weight: 800;
+  /* text-align: center; */
+  color: #a0522d;
+  /* margin-right: 20px; */
+}
+
+h2 {
+    font-size: 5em;
+    margin: 5px;
+}
+nav {
+  /* position: relative; left: 20px; */
+  font-family: "Oswald", sans-serif;
+  font-size: 35px;
+  font-weight: 550;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  }
+ul {
+  list-style-type: none;
+}
+.tagline {
+  text-align: center;
+  font-family: "Lobster", cursive;
+  font-size: 19px;
+  font-weight: 400;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  padding: 0px;
+}
+
+@media (max-width: 549px){
+  .hidden--mobile {
+    display: none !important;
+  }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #logo-img {
+    max-height: 60vh;
+    max-width: 60vw;
+  }
+  h2 {
+    font-size: 11vw;
+    text-align: center;
+  }
+}
+
+@media (min-width: 550px) {
+  nav > .fa-bars {
+    display: none;
+  }
+  .hidden--mobile {
+    display: flex;
+    width: 10em;
+    justify-content: space-around;
+
+  }
+}
+
+.main-content, #day-select, .contact-content {
+  text-align: center;
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+footer {
+  text-align: right;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+a:link, :visited {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+}
+/* start contact page css */
+.question {
+  /* position: relative; left: 50px; */
+  display: flex;
+  justify-content: center;
+}
