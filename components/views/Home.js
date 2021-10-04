@@ -8,7 +8,7 @@ export default () =>
         <label for="day-select"><em>What's the forecast for:</em></label>
         <select name="day" id="day-select" onchange="location = this.value;">
             <option value=""> --Please choose a day-- </option>
-            <option value="Plan.js">Monday</option>
+            <option value="Plan">Monday</option>
             <option value="tues">Tuesday</option>
             <option value="wed">Wednesday</option>
             <option value="thur">Thursday</option>

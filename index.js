@@ -17,14 +17,13 @@ router
 
 function render(st) {
   document.querySelector("#root").innerHTML = `
-  ${Header()}
+  ${Header(st)}
   ${Nav(state.Links)}
   ${Main(st)}
   ${Footer()}
   `;
   router.updatePageLinks();
 }
-render(state.Home);
 
 document
   .querySelector("#logo-img")
