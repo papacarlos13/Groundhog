@@ -48,7 +48,9 @@ router.hooks({
         )
         .then(response => {
           state.Home.weather = {};
-          state.Home.weather.today = response.data.daily[0].temp.day;
+          state.Home.weather.today = response.data.daily[0].temp.max;
+          state.Home.weather.todaydescript =
+            response.data.daily[0].weather[0].main;
           state.Home.weather.tomorrowhigh = response.data.daily[1].temp.max;
           state.Home.weather.tomorrowlow = response.data.daily[1].temp.min;
           state.Home.weather.tomorrowdescript =
