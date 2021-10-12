@@ -101,6 +101,17 @@ a:link, :visited {
 a:hover {
   color: blue;
 }
+
+/* api weather */
+.temp {
+  margin-top: 3vw;
+}
+.temp > p {
+  margin-top: 0vw;
+  margin-bottom: 0vw;
+  padding: 0vw 3vw 0vw;
+}
+
 /* start contact page css */
 .question {
   /* position: relative; left: 50px; */
