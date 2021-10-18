@@ -33,6 +33,11 @@ function addEventListeners(st) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+
+  document.querySelector(".test").addEventListener("click", event => {
+    event.preventDefault();
+    render(state.Monday);
+  });
 }
 
 router.hooks({

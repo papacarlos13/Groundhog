@@ -1,4 +1,5 @@
 import html from "html-literal";
+import Monday from "../../store/Monday";
 export default st => html`
   <section>
     <div class="tagline">
@@ -6,9 +7,11 @@ export default st => html`
     </div>
     <div class="main-content">
       <label for="day-select"><em>What's the forecast for:</em></label>
-      <select name="day" id="day-select" onchange="location = this.value;">
+      <select name="day" id="day-select" onchange="location = this.value">
         <option value=""> --Please choose a day-- </option>
-        <option value="Monday">Monday</option>
+        <div class="test">
+          <option value="Monday">Monday</option>
+        </div>
         <option value="">Tuesday</option>
         <option value="">Wednesday</option>
         <option value="">Thursday</option>
@@ -16,6 +19,9 @@ export default st => html`
         <option value="">Saturday</option>
         <option value="">Sunday</option>
       </select>
+    </div>
+    <div class="test">
+      <p>Test this <a href="Monday">link</a></p>
     </div>
     <div class="temp">
       <p>

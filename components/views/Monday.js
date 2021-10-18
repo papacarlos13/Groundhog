@@ -1,4 +1,6 @@
 import html from "html-literal";
-export default () => html`
-  <h4>(Dynamic table will go here.)</h4>
+export default st => html`
+  <h4>
+    This page currently under construction.
+  </h4>
 `;
