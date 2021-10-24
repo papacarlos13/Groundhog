@@ -25,9 +25,9 @@ export default st => html`
 
     <div class="temp">
       <p>
-        <!-- Today is ${todayName}. Expect a high of
+        Today is ${todayName}. Expect a high of
         ${kelvinToFahrenheit(st.weather.today)}&deg;F., and
-        ${st.weather.todaydescript}. -->
+        ${st.weather.todaydescript}.
       </p>
       <p>
         ${weekdayName[numofDay(tomorrowNum)]} will be

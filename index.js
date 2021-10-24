@@ -59,7 +59,7 @@ function addEventListeners(st) {
         .post(`${process.env.SALES_DATA_API_URL}`, requestData)
         .then(response => {
           state.Monday.sales.push(response.data);
-          router.navigate("/Monday");
+          router.navigate("/Home");
         })
         .catch(error => {
           console.log("It puked", error);
