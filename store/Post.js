@@ -1,3 +1,3 @@
 export default {
-  page: "Plan"
+  page: "Post"
 };

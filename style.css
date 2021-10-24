@@ -36,7 +36,7 @@ nav {
   /* position: relative; left: 20px; */
   font-family: "Oswald", sans-serif;
   font-size: 35px;
-  font-weight: 550;
+  font-weight: 00;
   margin-bottom: 0px;
   padding-bottom: 0px;
   }
@@ -103,9 +103,9 @@ a:hover {
 }
 
 /* api weather */
-.temp {
+/* .temp {
   margin-top: 3vw;
-}
+} */
 .temp > p {
   margin-top: 0vw;
   margin-bottom: 0vw;
@@ -117,4 +117,17 @@ a:hover {
   /* position: relative; left: 50px; */
   display: flex;
   justify-content: center;
+}
+
+/* start post sales page css */
+#sales-poster {
+  margin-left: 3vw;
+  width: 30vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 500;
 }

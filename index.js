@@ -38,6 +38,34 @@ function addEventListeners(st) {
     event.preventDefault();
     render(state.Monday);
   });
+
+    if (st.page === "Post") {
+    document.querySelector("form").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const inputList = event.target.elements;
+
+      const requestData = {
+        product: inputList.product.value,
+        date: inputList.date.value,
+        day: inputList.day.value,
+        produced: inputList.produced.value,
+        sold: inputList.sold.value,
+        leftover: inputList.leftover.value
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.SALES_DATA_API_URL}`, requestData)
+        .then(response => {
+          state.Monday.sales.push(response.data);
+          router.navigate("/Monday");
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 router.hooks({
@@ -87,8 +115,13 @@ router.hooks({
           .catch(err => console.log(err));
         break;
       case "Monday":
-        console.log("This is Monday");
-        done();
+        axios
+          .get(`${process.env.SALES_DATA_API_URL}`)
+          .then(response => {
+            state.Monday.sales = response.data;
+            done();
+          })
+          .catch(err => console.log(err));
         break;
       default:
         done();
