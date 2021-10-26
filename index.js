@@ -34,10 +34,12 @@ function addEventListeners(st) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
-  document.querySelector("#monday-link").addEventListener("click", event => {
-    event.preventDefault();
-    render(state.Monday);
-  });
+ if (st.page === "Home") {
+   document.querySelector("#monday-link").addEventListener("click", event => {
+     event.preventDefault();
+     render(state.Monday);
+   });
+ }
 
     if (st.page === "Post") {
     document.querySelector("form").addEventListener("submit", event => {
