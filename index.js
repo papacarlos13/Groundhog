@@ -34,14 +34,14 @@ function addEventListeners(st) {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 
- if (st.page === "Home") {
-   document.querySelector("#monday-link").addEventListener("click", event => {
-     event.preventDefault();
-     render(state.Monday);
-   });
- }
+  if (st.page === "Home") {
+    document.querySelector("#monday-link").addEventListener("click", event => {
+      event.preventDefault();
+      render(state.Monday);
+    });
+  }
 
-    if (st.page === "Post") {
+  if (st.page === "Post") {
     document.querySelector("form").addEventListener("submit", event => {
       event.preventDefault();
 
@@ -61,6 +61,7 @@ function addEventListeners(st) {
         .post(`${process.env.SALES_DATA_API_URL}`, requestData)
         .then(response => {
           state.Monday.sales.push(response.data);
+          console.log(response.data);
           router.navigate("/Home");
         })
         .catch(error => {
