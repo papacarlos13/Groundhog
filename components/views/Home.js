@@ -2,18 +2,17 @@ import html from "html-literal";
 
 export default st => html`
   <section>
-    <div class="tagline">
+    <!-- <div class="tagline">
       <p>"Let's plan for 6 more days of spring!"</p>
-    </div>
+    </div> -->
     <div class="main-content">
       <label for="day-select"><em>What's the sales forecast for:</em></label>
       <select name="day" id="day-select" onchange="location = this.value">
-        <option value=""> --Please choose a day-- </option>
+        <option value=""> Please choose a day </option>
 
         <option id="monday-link" value="Monday"
           ><a href="Monday">Monday</a></option
         >
-
         <option value="">Tuesday</option>
         <option value="">Wednesday</option>
         <option value="">Thursday</option>
@@ -24,6 +23,9 @@ export default st => html`
     </div>
 
     <div class="temp">
+      <p id="temp-intro">
+        Don't forget to check how this week's weather might impact your sales:
+      </p>
       <p>
         Today is ${todayName}. Expect a high of
         ${kelvinToFahrenheit(st.weather.today)}&deg;F., and

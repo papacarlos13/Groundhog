@@ -1,25 +1,19 @@
 import html from "html-literal";
 export default st => html`
-
   <form id="sales-poster" method="POST" action="">
-    <p>(This page still needs to be formatted)</p>
     <div>
-    <label for="product">Product:</label>
-    <select id="product" name="product">
-      <option value="">Please select a product</option>
-      <option value="gooey">gooey Butter slice</option>
-      <option value="asiago">asiago bagel</option>
-      <option value="choc">choc. long john</option>
-      <option value="pie">apple pie slice</option>
-    </select>
+      <label for="product">Product:</label>
+      <select id="product" name="product">
+        <option value="">Please select a product</option>
+        <option value="gooey">gooey Butter slice</option>
+        <option value="asiago">asiago bagel</option>
+        <option value="choc">choc. long john</option>
+        <option value="pie">apple pie slice</option>
+      </select>
     </div>
     <div>
       <label for="date">Date:</label>
-      <input
-      type="date"
-      name="date"
-      id="date"
-      required/>
+      <input type="date" name="date" id="date" required />
     </div>
     <div>
       <label for="day">Day:</label>
@@ -42,7 +36,8 @@ export default st => html`
         id="produced"
         placeholder="enter amount"
         min="0"
-        required/>
+        required
+      />
     </div>
     <div>
       <label for="sold">Amount Sold:</label>
@@ -52,7 +47,8 @@ export default st => html`
         id="sold"
         placeholder="enter amount"
         min="0"
-        required/>
+        required
+      />
     </div>
     <div>
       <label for="leftover">Amount Leftover:</label>
@@ -62,13 +58,11 @@ export default st => html`
         id="leftover"
         placeholder="enter amount"
         min="0"
-        required/>
+        required
+      />
     </div>
     <div>
-    <input
-      type="submit"
-      name="submit"
-      value="Submit Sales"/>
+      <input type="submit" name="submit" value="Submit Sales" />
     </div>
   </form>
 `;

@@ -3,3 +3,4 @@ export { default as Contact } from "./Contact";
 export { default as Post } from "./Post";
 export { default as Links } from "./Links";
 export { default as Monday } from "./Monday";
+export { default as Print } from "./Print";

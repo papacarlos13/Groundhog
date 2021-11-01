@@ -116,43 +116,57 @@ function addEventListeners(st) {
   if (st.page === "Home") {
     document.querySelector("#monday-link").addEventListener("click", event => {
       event.preventDefault();
-      render(state.Monday);
+      router.navigate("/Monday");
     });
   }
 
   if (st.page === "Post") {
-    document.querySelector("form").addEventListener("submit", event => {
+    document
+      .querySelector("#sales-poster")
+      .addEventListener("submit", event => {
+        event.preventDefault();
+
+        const inputList = event.target.elements;
+
+        const requestData = {
+          product: inputList.product.value,
+          date: inputList.date.value,
+          day: inputList.day.value,
+          produced: inputList.produced.value,
+          sold: inputList.sold.value,
+          leftover: inputList.leftover.value
+        };
+        console.log("request Body", requestData);
+
+        axios
+          .post(`${process.env.SALES_DATA_API_URL}`, requestData)
+          .then(response => {
+            // state.Monday.sales.push(response.data);
+            // state.Monday.sales = {};
+            // state.Monday.sales.product = response.data.product;
+            // state.Monday.sales.date = response.data.date;
+            // state.Monday.sales.day = response.data.day;
+            // state.Monday.sales.produced = response.data.produced;
+            // state.Monday.sales.sold = response.data.sold;
+            // state.Monday.sales.leftover = response.data.leftover;
+            console.log("requestData", requestData);
+            router.navigate("/Home");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+          });
+      });
+  }
+  if (st.page === "Monday") {
+    document.querySelector("#save-bttn").addEventListener("click", event => {
       event.preventDefault();
-
-      const inputList = event.target.elements;
-
-      const requestData = {
-        product: inputList.product.value,
-        date: inputList.date.value,
-        day: inputList.day.value,
-        produced: inputList.produced.value,
-        sold: inputList.sold.value,
-        leftover: inputList.leftover.value
-      };
-      console.log("request Body", requestData);
-
-      axios
-        .post(`${process.env.SALES_DATA_API_URL}`, requestData)
-        .then(response => {
-          // state.Monday.sales.push(response.data);
-          // state.Monday.sales = {};
-          // state.Monday.sales.product = response.data.product;
-          // state.Monday.sales.date = response.data.date;
-          // state.Monday.sales.day = response.data.day;
-          // state.Monday.sales.produced = response.data.produced;
-          // state.Monday.sales.sold = response.data.sold;
-          // state.Monday.sales.leftover = response.data.leftover;
-          console.log("requestData", requestData);
-          router.navigate("/Home");
-        })
-        .catch(error => {
-          console.log("It puked", error);
-        });
+      // const gooeyInput = document.getElementById("#input-a").textContent;
+      // const asiagoInput = document.getElementById("#input-b").value;
+      router.navigate("/Print");
     });
   }
+  // if (st.page === "Print") {
+  //   const gooeyInput = document.getElementById("#input-a").textContent;
+  //   document.getElementById("#gooeyPrint").innerHTML = "blue";
+  // }
 }

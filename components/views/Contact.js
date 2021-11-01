@@ -5,7 +5,7 @@ export default () =>
     <div class="contact-content">
       <div class="question">
         <p>
-          <em>How can the Groundhog help forecast your business better?</em>
+          How can the Groundhog help forecast your business better?
         </p>
       </div>
       <form
@@ -36,7 +36,7 @@ export default () =>
             name="message"
             id="message"
             cols="67"
-            rows="8"
+            rows="5"
             placeholder="Please provide a brief description of the problem you would like the Groundhog to help your business solve."
             required
           ></textarea>

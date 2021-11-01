@@ -1,8 +1,13 @@
+:root {
+  --main-font: "Crimson Text", serif;
+}
+
 body {
   background-color: #f0e68c;
 }
+
 header {
-  padding: 15px;
+  /* padding: 15px; */
   background-color: #d2b48c;
   height: 300px;
   display: flex;
@@ -11,21 +16,14 @@ header {
 }
 
 #logo-img {
-  /* float: left;
-  position: relative; top: 15px;
-  margin-left: 15px; */
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 275px;
+  max-height: 275px;
 }
 
 .header-text {
-  /* margin-top: 40px;
-  letter-spacing: 2px; */
   font-family: "Acme", sans-serif;
   font-weight: 800;
-  /* text-align: center; */
   color: #a0522d;
-  /* margin-right: 20px; */
 }
 
 h2 {
@@ -36,7 +34,7 @@ nav {
   /* position: relative; left: 20px; */
   font-family: "Oswald", sans-serif;
   font-size: 35px;
-  font-weight: 00;
+  font-weight: 500;
   margin-bottom: 0px;
   padding-bottom: 0px;
   }
@@ -85,15 +83,22 @@ ul {
 
 .main-content, #day-select, .contact-content {
   text-align: center;
-  font-family: "Crimson Text", serif;
+  font-family: var(--main-font);
   font-size: 24px;
   font-weight: 500;
 }
+
+.main-content {
+  margin-bottom: 1vw;
+}
+
 footer {
+  font-family: var(--main-font);
+  font-size: 1.25vw;
   text-align: right;
   margin-right: 1vw;
-  margin-left: 1vw;
-}
+  }
+
 a:link, :visited {
   color: black;
   text-decoration: none;
@@ -103,9 +108,21 @@ a:hover {
 }
 
 /* api weather */
-/* .temp {
-  margin-top: 3vw;
-} */
+.temp {
+  margin: auto;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  padding: 2vw;
+  width: max-content;
+  border: 1px solid black;
+  text-align: center;
+  font-family: var(--main-font);
+  font-size: 18px;
+}
+#temp-intro {
+  font-style: italic;
+  font-weight: 600;
+}
 .temp > p {
   margin-top: 0vw;
   margin-bottom: 0vw;
@@ -117,6 +134,8 @@ a:hover {
   /* position: relative; left: 50px; */
   display: flex;
   justify-content: center;
+  font-style: italic;
+
 }
 
 /* start post sales page css */
@@ -125,9 +144,60 @@ a:hover {
   width: 30vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  font-family: "Crimson Text", serif;
+  justify-content: right;
+  font-family: var(--main-font);
   font-size: 20px;
   font-weight: 500;
+}
+
+/* start monday page css */
+.monday-content {
+  font-family: var(--main-font);
+  display: flex;
+  justify-content: space-evenly;
+}
+#monday-title, #print-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--main-font);
+}
+table {
+  font-size: 18px;
+  table-layout: fixed;
+  width: 30vw;
+  border: 1px solid black;
+  padding: 1vw;
+  background-color: white;
+}
+td {
+  border: 2px solid;
+}
+label {
+  font-size: 20px;
+  font-weight: 800;
+}
+.save-bttn {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 4.75vw;
+}
+
+/* start print page css */
+#prnt-table {
+  font-family: var(--main-font);
+  font-size: 20px;
+  table-layout: fixed;
+  width: 35vw;
+  background-color: transparent;
+  border: transparent;
+  margin: auto;
+}
+#prnt-table td {
+  border: solid #a0522d 2px;
+  background-color: #d2b48c;
+}
+#prnt-bttn {
+  display: flex;
+  justify-content: center;
 }
