@@ -9,6 +9,9 @@ dotenv.config();
 
 const router = new Navigo(window.location.origin);
 
+let mondayElement = document.getElementById("something");
+console.log(mondayElement);
+
 router.hooks({
   before: (done, params) => {
     const page =
@@ -59,15 +62,23 @@ router.hooks({
         axios
           .get(`${process.env.SALES_DATA_API_URL}`)
           .then(response => {
-            console.log("Monday", response.data);
-            state.Monday.sales = {};
-            state.Monday.sales.product = response.data.product;
-            state.Monday.sales.date = response.data.date;
-            state.Monday.sales.day = response.data.day;
-            state.Monday.sales.produced = response.data.produced;
-            state.Monday.sales.sold = response.data.sold;
-            state.Monday.sales.leftover = response.data.leftover;
-            console.log(state.Monday.sales);
+            console.log("All data", response.data);
+            let result = response.data;
+            console.log("result", result);
+            let resultMonday = result.filter(function(result) {
+              return result.day == "Monday";
+            });
+            console.log("resultMonday", resultMonday);
+            let gooeyMonday = resultMonday.filter(function(resultMonday) {
+              return resultMonday.product == "gooey";
+            });
+            console.log("gooeyMonday", gooeyMonday);
+            let asiagoMonday = resultMonday.filter(function(resultMonday) {
+              return resultMonday.product == "asiago";
+            });
+            state.Monday.mondayData = resultMonday;
+            state.Monday.gooeyData = gooeyMonday;
+            state.Monday.asiagoData = asiagoMonday;
             done();
           })
           .catch(err => console.log(err));
@@ -160,13 +171,8 @@ function addEventListeners(st) {
   if (st.page === "Monday") {
     document.querySelector("#save-bttn").addEventListener("click", event => {
       event.preventDefault();
-      // const gooeyInput = document.getElementById("#input-a").textContent;
-      // const asiagoInput = document.getElementById("#input-b").value;
+
       router.navigate("/Print");
     });
   }
-  // if (st.page === "Print") {
-  //   const gooeyInput = document.getElementById("#input-a").textContent;
-  //   document.getElementById("#gooeyPrint").innerHTML = "blue";
-  // }
 }

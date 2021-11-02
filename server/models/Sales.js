@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const salesSchema = new mongoose.Schema({
-  product: { type: String, unique: true },
-  date: { type: Date, default: Date.now, unique: true },
-  day: { type: String, unique: true },
+  product: String,
+  date: Date,
+  day: String,
   produced: Number,
   sold: Number,
   leftover: Number

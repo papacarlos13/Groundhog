@@ -1,4 +1,6 @@
 export default {
-  page: "Monday"
-  // sales: []
+  page: "Monday",
+  mondayData: [],
+  gooeyData: [],
+  asiagoData: []
 };
