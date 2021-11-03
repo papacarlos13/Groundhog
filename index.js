@@ -152,14 +152,6 @@ function addEventListeners(st) {
         axios
           .post(`${process.env.SALES_DATA_API_URL}`, requestData)
           .then(response => {
-            // state.Monday.sales.push(response.data);
-            // state.Monday.sales = {};
-            // state.Monday.sales.product = response.data.product;
-            // state.Monday.sales.date = response.data.date;
-            // state.Monday.sales.day = response.data.day;
-            // state.Monday.sales.produced = response.data.produced;
-            // state.Monday.sales.sold = response.data.sold;
-            // state.Monday.sales.leftover = response.data.leftover;
             console.log("requestData", requestData);
             router.navigate("/Home");
           })
@@ -169,9 +161,15 @@ function addEventListeners(st) {
       });
   }
   if (st.page === "Monday") {
-    document.querySelector("#save-bttn").addEventListener("click", event => {
+    document.querySelector("#mondayForm").addEventListener("submit", event => {
       event.preventDefault();
 
+      const userInput = {
+        gooeyPrint: event.target.elements.inputOne.value,
+        asiagoPrint: event.target.elements.inputTwo.value
+      };
+      console.log(userInput);
+      state.Print.mondayInputs.push(userInput);
       router.navigate("/Print");
     });
   }

@@ -1,3 +1,4 @@
 export default {
-  page: "Print"
+  page: "Print",
+  mondayInputs: []
 };
