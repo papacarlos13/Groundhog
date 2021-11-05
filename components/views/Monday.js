@@ -1,5 +1,5 @@
 import html from "html-literal";
-// for loop
+
 export default st => html`
   <p id="monday-title">Monday's Forecast</p>
   <br />
@@ -62,11 +62,11 @@ export default st => html`
                 id="inputOne"
                 name="inputOne"
                 step="1"
-                min="8"
-                max="99"
+                min="${st.minGooey}"
+                max="999"
               />
             </td>
-            <td id="avg-a">Avg.Sale:</td>
+            <td id="avg-a">Avg.Sale: ${st.avgGooey}</td>
             <td>Target: 2</td>
           </tr>
         </tfoot>
@@ -86,7 +86,7 @@ export default st => html`
           <tr>
             <th scope="row">6 weeks ago</th>
             <td>${st.asiagoData[st.asiagoData.length - 6].produced}</td>
-            <td>${st.asiagoData[st.asiagoData.length - 6].sold}</td>
+            <td id="testme">${st.asiagoData[st.asiagoData.length - 6].sold}</td>
             <td>${st.asiagoData[st.asiagoData.length - 6].leftover}</td>
           </tr>
           <tr>
@@ -129,11 +129,13 @@ export default st => html`
                 id="inputTwo"
                 name="inputTwo"
                 step="1"
-                min="8"
+                min="${st.minAsiago}"
                 max="99"
               />
             </td>
-            <td id="avg-b">Avg.Sale:</td>
+            <td id="avg-b">
+              Avg.Sale: ${st.avgAsiago}
+            </td>
             <td>Target: 4</td>
           </tr>
         </tfoot>

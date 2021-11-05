@@ -79,6 +79,46 @@ router.hooks({
             state.Monday.mondayData = resultMonday;
             state.Monday.gooeyData = gooeyMonday;
             state.Monday.asiagoData = asiagoMonday;
+
+            let u =
+              state.Monday.gooeyData[state.Monday.gooeyData.length - 1].sold;
+            let v =
+              state.Monday.gooeyData[state.Monday.gooeyData.length - 2].sold;
+            let w =
+              state.Monday.gooeyData[state.Monday.gooeyData.length - 3].sold;
+            let x =
+              state.Monday.gooeyData[state.Monday.gooeyData.length - 4].sold;
+            let y =
+              state.Monday.gooeyData[state.Monday.gooeyData.length - 5].sold;
+            let z =
+              state.Monday.gooeyData[state.Monday.gooeyData.length - 6].sold;
+            const minGooey = Math.min(u, v, w, x, y, z);
+            state.Monday.minGooey = minGooey;
+            let a =
+              state.Monday.asiagoData[state.Monday.asiagoData.length - 1].sold;
+            let b =
+              state.Monday.asiagoData[state.Monday.asiagoData.length - 2].sold;
+            let c =
+              state.Monday.asiagoData[state.Monday.asiagoData.length - 3].sold;
+            let d =
+              state.Monday.asiagoData[state.Monday.asiagoData.length - 4].sold;
+            let e =
+              state.Monday.asiagoData[state.Monday.asiagoData.length - 5].sold;
+            let f =
+              state.Monday.asiagoData[state.Monday.asiagoData.length - 6].sold;
+            const minAsiago = Math.min(a, b, c, d, e, f);
+            state.Monday.minAsiago = minAsiago;
+            const getAvg = function(num1, num2, num3, num4, num5, num6) {
+              let avg = Math.round(
+                (num1 + num2 + num3 + num4 + num5 + num6) / 6
+              );
+              return avg;
+            };
+
+            const avgGooey = getAvg(u, v, w, x, y, z);
+            state.Monday.avgGooey = avgGooey;
+            const avgAsiago = getAvg(a, b, c, d, e, f);
+            state.Monday.avgAsiago = avgAsiago;
             done();
           })
           .catch(err => console.log(err));

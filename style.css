@@ -141,8 +141,8 @@ a:hover {
 
 /* start post sales page css */
 #sales-poster {
-  margin-left: 3vw;
-  width: 30vw;
+  margin-left: 8vw;
+  width: 364px;
   display: flex;
   flex-wrap: wrap;
   justify-content: right;
