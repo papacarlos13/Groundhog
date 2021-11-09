@@ -165,10 +165,10 @@ a:hover {
 }
 #monday-title, #print-title {
   text-align: center;
-  font-size: 34px;
+  font-size: 36px;
   font-weight: 800;
   font-family: var(--main-font);
-}
+  }
 table {
   font-size: 18px;
   table-layout: fixed;
@@ -189,8 +189,7 @@ td:hover {
 label {
   font-size: 22px;
   font-weight: 800;
-  color: maroon;
-}
+  }
 .save-bttn {
   display: flex;
   justify-content: flex-end;
