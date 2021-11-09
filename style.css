@@ -9,15 +9,15 @@ body {
 header {
   /* padding: 15px; */
   background-color: #d2b48c;
-  height: 300px;
+  height: 275px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 #logo-img {
-  max-width: 275px;
-  max-height: 275px;
+  max-width: 250px;
+  max-height: 250px;
   border-radius: 15px;
 }
 
@@ -59,14 +59,19 @@ ul {
   header {
     display: flex;
     flex-wrap: wrap;
+    height: 305px;
   }
   #logo-img {
     max-height: 60vh;
     max-width: 60vw;
+    padding-top: 1vw;
   }
   h2 {
     font-size: 11vw;
     text-align: center;
+  }
+  .temp > p {
+   font-size: 13px;
   }
 }
 
@@ -160,7 +165,7 @@ a:hover {
 }
 #monday-title, #print-title {
   text-align: center;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 800;
   font-family: var(--main-font);
 }
@@ -174,10 +179,17 @@ table {
 }
 td {
   border: 2px solid;
+  text-align: center;
+}
+td:hover {
+  color: maroon;
+  font-weight: 800;
+  background-color: #f0e68c;
 }
 label {
   font-size: 22px;
   font-weight: 800;
+  color: maroon;
 }
 .save-bttn {
   display: flex;

@@ -63,11 +63,11 @@ export default st => html`
                 name="inputOne"
                 step="1"
                 min="${st.minGooey}"
-                max="999"
+                max="99"
               />
             </td>
             <td id="avg-a" colspan="2">
-              Avg.Sale: ${st.avgGooey}, Avg.Rate: ${st.gooeyRate}
+              Avg.Sale: ${st.avgGooey}, Rate: ${st.gooeyRate}
             </td>
           </tr>
         </tfoot>
@@ -135,7 +135,7 @@ export default st => html`
               />
             </td>
             <td id="avg-b" colspan="2">
-              Avg.Sale: ${st.avgAsiago}, Avg.Rate: ${st.asiagoRate}
+              Avg.Sale: ${st.avgAsiago}, Rate: ${st.asiagoRate}
             </td>
           </tr>
         </tfoot>
