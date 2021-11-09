@@ -108,6 +108,7 @@ router.hooks({
               state.Monday.asiagoData[state.Monday.asiagoData.length - 6].sold;
             const minAsiago = Math.min(a, b, c, d, e, f);
             state.Monday.minAsiago = minAsiago;
+
             const getAvg = function(num1, num2, num3, num4, num5, num6) {
               let avg = Math.round(
                 (num1 + num2 + num3 + num4 + num5 + num6) / 6
@@ -119,6 +120,22 @@ router.hooks({
             state.Monday.avgGooey = avgGooey;
             const avgAsiago = getAvg(a, b, c, d, e, f);
             state.Monday.avgAsiago = avgAsiago;
+
+            const getRate = function(num1, num2, num3, num4, num5, num6) {
+              let rate = (num1 - num2 + (num3 - num4) + (num5 - num6)) / 3;
+              if (rate > 0) {
+                let pos = ["+", rate.toFixed(2)];
+                return pos.join("");
+              } else {
+                return rate.toFixed(2);
+              }
+            };
+
+            const gooeyRate = getRate(u, v, w, x, y, z);
+            state.Monday.gooeyRate = gooeyRate;
+            const asiagoRate = getRate(a, b, c, d, e, f);
+            state.Monday.asiagoRate = asiagoRate;
+
             done();
           })
           .catch(err => console.log(err));

@@ -66,8 +66,9 @@ export default st => html`
                 max="999"
               />
             </td>
-            <td id="avg-a">Avg.Sale: ${st.avgGooey}</td>
-            <td>Target: 2</td>
+            <td id="avg-a" colspan="2">
+              Avg.Sale: ${st.avgGooey}, Avg.Rate: ${st.gooeyRate}
+            </td>
           </tr>
         </tfoot>
       </table>
@@ -133,10 +134,9 @@ export default st => html`
                 max="99"
               />
             </td>
-            <td id="avg-b">
-              Avg.Sale: ${st.avgAsiago}
+            <td id="avg-b" colspan="2">
+              Avg.Sale: ${st.avgAsiago}, Avg.Rate: ${st.asiagoRate}
             </td>
-            <td>Target: 4</td>
           </tr>
         </tfoot>
       </table>
