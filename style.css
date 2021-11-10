@@ -45,9 +45,10 @@ ul {
 .tagline {
   text-align: center;
   font-family: "Lobster", cursive;
-  font-size: 19px;
-  font-weight: 400;
-  margin-top: 5px;
+  font-size: 24px;
+  font-weight: 800;
+  color: maroon;
+  margin-top: 0px;
   margin-bottom: 50px;
   padding: 0px;
 }
@@ -111,7 +112,9 @@ a:link, :visited {
   text-decoration: none;
 }
 a:hover {
-  color: blue;
+  color: maroon;
+  font-weight: 800;
+  font-size: 36px;
 }
 
 /* api weather */

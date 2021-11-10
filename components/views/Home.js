@@ -2,9 +2,9 @@ import html from "html-literal";
 
 export default st => html`
   <section>
-    <!-- <div class="tagline">
+    <div class="tagline">
       <p>"Let's plan for 6 more days of spring!"</p>
-    </div> -->
+    </div>
     <div class="main-content">
       <label for="day-select"><em>What's the sales forecast for:</em></label>
       <select name="day" id="day-select" onchange="location = this.value">
