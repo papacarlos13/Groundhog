@@ -27,6 +27,3 @@ export default st =>
       <button onclick="window.print()">Print</button>
     </div>
   `;
-
-// let gooeyInput = document.querySelector("#input-a").innerHTML;
-// let asiagoInput = document.querySelector("#input-b").innerHTML;

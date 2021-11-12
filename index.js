@@ -210,6 +210,7 @@ function addEventListeners(st) {
           .post(`${process.env.SALES_DATA_API_URL}`, requestData)
           .then(response => {
             console.log("requestData", requestData);
+            window.alert("Your data has been successfully recorded!");
             router.navigate("/Home");
           })
           .catch(error => {
