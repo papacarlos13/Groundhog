@@ -67,7 +67,13 @@ export default st => html`
               />
             </td>
             <td id="avg-a" colspan="2">
-              Avg.Sale: ${st.avgGooey}, Rate: ${st.gooeyRate}
+              Avg. Sale: ${st.avgGooey}, Rate: ${st.gooeyRate}
+            </td>
+          </tr>
+          <tr>
+            <td class="prediction" colspan="4">
+              Groundhog's prediction for this Monday: ${st.gooeyForecast} gooey
+              butter.
             </td>
           </tr>
         </tfoot>
@@ -135,7 +141,13 @@ export default st => html`
               />
             </td>
             <td id="avg-b" colspan="2">
-              Avg.Sale: ${st.avgAsiago}, Rate: ${st.asiagoRate}
+              Avg. Sale: ${st.avgAsiago}, Rate: ${st.asiagoRate}
+            </td>
+          </tr>
+          <tr>
+            <td class="prediction" colspan="4">
+              Groundhog's prediction for this Monday: ${st.asiagoForecast}
+              asiago bagels.
             </td>
           </tr>
         </tfoot>

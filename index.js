@@ -122,7 +122,12 @@ router.hooks({
             state.Monday.avgAsiago = avgAsiago;
 
             const getRate = function(num1, num2, num3, num4, num5, num6) {
-              let rate = (num1 - num2 + (num3 - num4) + (num5 - num6)) / 3;
+              let first = num1 - num2;
+              let second = num2 - num3;
+              let third = num3 - num4;
+              let fourth = num4 - num5;
+              let fifth = num5 - num6;
+              let rate = (first + second + third + fourth + fifth) / 5;
               if (rate > 0) {
                 let pos = ["+", rate.toFixed(2)];
                 return pos.join("");
@@ -135,6 +140,11 @@ router.hooks({
             state.Monday.gooeyRate = gooeyRate;
             const asiagoRate = getRate(a, b, c, d, e, f);
             state.Monday.asiagoRate = asiagoRate;
+
+            const gooeyForecast = Math.round(avgGooey + parseInt(gooeyRate));
+            state.Monday.gooeyForecast = gooeyForecast;
+            const asiagoForecast = Math.round(avgAsiago + parseInt(asiagoRate));
+            state.Monday.asiagoForecast = asiagoForecast;
 
             done();
           })
